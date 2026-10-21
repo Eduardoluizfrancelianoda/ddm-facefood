@@ -1,22 +1,25 @@
+import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import IntroScreen from './IntroScreen';
-import LoginScreen from './LoginScreen';
-import RegisterScreen from './RegisterScreen';
-import MainAppScreen from './MainApp';
+import Receitas from './Receitas';
 
+// navegação entre as telas do app
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Intro" screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Intro" component={IntroScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Register" component={RegisterScreen} />
-        <Stack.Screen name="MainApp" component={MainAppScreen} />
-        {/* Add more screens here as needed */}
+      <StatusBar style="light" />
+      <Stack.Navigator
+        initialRouteName="Receitas"
+        screenOptions={{
+          headerStyle: { backgroundColor: '#DB0004' },
+          headerTintColor: '#fff',
+          headerTitleStyle: { fontWeight: 'bold' },
+        }}
+      >
+        <Stack.Screen name="Receitas" component={Receitas} />
       </Stack.Navigator>
     </NavigationContainer>
   );
