@@ -1,4 +1,4 @@
-import { ScrollView, View, Text, StyleSheet } from 'react-native';
+import { ScrollView, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 // lista de receitas que aparecem na tela
 const receitas = [
@@ -132,7 +132,7 @@ const receitas = [
   },
 ];
 
-export default function Receitas() {
+export default function Receitas({ navigation }) {
   return (
     <ScrollView style={styles.fundo} contentContainerStyle={styles.lista}>
       <Text style={styles.aviso}>
@@ -163,6 +163,10 @@ export default function Receitas() {
           ))}
         </View>
       ))}
+
+      <TouchableOpacity onPress={() => navigation.navigate('Curiosidades')}>
+        <Text style={styles.link}>Ver curiosidades →</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 }
@@ -210,5 +214,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#4E342E',
     lineHeight: 22,
+  },
+  link: {
+    color: '#DB0004',
+    fontWeight: '600',
+    fontSize: 15,
+    textAlign: 'center',
+    marginTop: 4,
+    marginBottom: 8,
   },
 });

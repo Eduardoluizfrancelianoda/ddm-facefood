@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Login from './Login';
 import Cadastro from './Cadastro';
+import Curiosidades from './Curiosidades';
 import Receitas from './Receitas';
 
 // navegação entre as telas do app
@@ -24,6 +25,7 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
         <Stack.Screen name="Cadastro" component={Cadastro} options={{ headerShown: false }} />
         <Stack.Screen name="Receitas" component={Receitas} />
+        <Stack.Screen name="Curiosidades" component={Curiosidades} />
       </Stack.Navigator>
     </NavigationContainer>
   );
