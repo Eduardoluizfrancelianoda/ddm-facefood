@@ -1,4 +1,4 @@
-import { ScrollView, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { ScrollView, View, Text, StyleSheet } from 'react-native';
 
 // fatos curiosos sobre comida
 const curiosidades = [
@@ -52,7 +52,7 @@ const curiosidades = [
   },
 ];
 
-export default function Curiosidades({ navigation }) {
+export default function Curiosidades() {
   return (
     <ScrollView style={styles.fundo} contentContainerStyle={styles.lista}>
       <Text style={styles.aviso}>
@@ -67,10 +67,6 @@ export default function Curiosidades({ navigation }) {
           <Text style={styles.texto}>{c.texto}</Text>
         </View>
       ))}
-
-      <TouchableOpacity onPress={() => navigation.navigate('Dicas')}>
-        <Text style={styles.link}>Ver dicas →</Text>
-      </TouchableOpacity>
     </ScrollView>
   );
 }
@@ -106,13 +102,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#4E342E',
     lineHeight: 22,
-  },
-  link: {
-    color: '#DB0004',
-    fontWeight: '600',
-    fontSize: 15,
-    textAlign: 'center',
-    marginTop: 4,
-    marginBottom: 8,
   },
 });

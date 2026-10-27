@@ -32,7 +32,7 @@ export default function Login({ navigation, route }) {
       (contaNova && email === contaNova.email && senha === contaNova.senha);
 
     if (podeEntrar) {
-      navigation.replace('Receitas');
+      navigation.replace('Inicio');
     } else {
       setErro('E-mail ou senha incorretos.');
     }
